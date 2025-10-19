@@ -1,20 +1,40 @@
 const myLibrary = [];
 
-function Book(title, author, year, read) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
-    }
-    this.title = title;
-    this.author = author;
-    this.year = year;
-    this.read = read;
-    this.id = crypto.randomUUID();
-    this.changeStatus = function() {
-        if (this.read == "read") {
-            this.read = "unread"
-        }
-        else {
-            this.read = "read";
+// function Book(title, author, year, read) {
+//     if (!new.target) {
+//         throw Error("You must use the 'new' operator to call the constructor");
+//     }
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+//     this.read = read;
+//     this.id = crypto.randomUUID();
+//     this.changeStatus = function() {
+//         if (this.read == "read") {
+//             this.read = "unread"
+//         }
+//         else {
+//             this.read = "read";
+//         }
+//     }
+// }
+
+// rewrite using Class
+
+class Book {
+    constructor(title, author, year, read) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.read = read;
+        this.id = crypto.randomUUID();
+        this.changeStatus = function() {
+            if (this.read == "read") {
+                this.read = "unread"
+            }
+            else {
+                this.read = "read";
+            }
         }
     }
 }
